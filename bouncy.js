@@ -8,19 +8,16 @@ ball[0].posY = 200;
 ball[0].Yrev = false;
 ball[0].radi = 100;
 function moveBall(wch1, nowBall) {
-  console.log(wch1);
   var Xmin = 100;
   var Xmax = 1100;
   var Ymin = 200;
   var Ymax = 700;
-console.log('nowball posX is: ' + nowBall.posX + "nowball velX is: " + nowBall.velX)
   if(nowBall.Xrev === false){
     nowBall.posX = nowBall.posX + nowBall.velX;
   }
   else{
     nowBall.posX = nowBall.posX - nowBall.velX;
   }
-  console.log('nowball xrev is: ' + nowBall.posX)
   if(nowBall.posX > Xmax - nowBall.radi){
     ball[wch1].Xrev = true;
   }
@@ -47,7 +44,6 @@ console.log('nowball posX is: ' + nowBall.posX + "nowball velX is: " + nowBall.v
 function moveBalls(){
     for(counter = 0; counter < ball.length; counter++){
         moveBall(counter, ball[counter]);
-        if(counter===1){console.log(counter + ball[counter])}
     }      
 }
 function newball(){
