@@ -14,7 +14,7 @@ A page outlining John's Academic and Professional History.
 /bouncy  
 A page where users can make balls that bounce and use buttons, switches, sliders, and other inputs to do fun things. This page demonstrates John's ability to work with variables, arrays, objects, loops, conditionals, methods... etc.  
 ### Don't Go Here  
-/donotgo
+/donotgo    
 A page that you should not visit. 
   
 ## License  
