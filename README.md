@@ -1,7 +1,5 @@
 # John Bau-Madsen's Porfolio
----
 ## About this Project
----
 This page is a place for John to show his capabilities as a developer. John wants users to see that he is focused on providing clean readable code that runs well and delivers a high-end user experience.  
 ## Pages
 
