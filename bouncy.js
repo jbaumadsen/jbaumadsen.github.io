@@ -1,12 +1,23 @@
-//Set global variable that would contain the position, velocity and the html element "ball"
-var ball = [document.getElementById('ball')];
-ball[0].velX = 10;
-ball[0].velY = 8;
-ball[0].posX = 100;
-ball[0].Xrev = false;
-ball[0].posY = 200;
-ball[0].Yrev = false;
-ball[0].radi = 100;
+//Set global variable that would contain the position, velocity and the html element "balls"
+var balls = [{
+  element: document.getElementById('ball'),
+  velX: 10,
+  velY: 8,
+  posX: 100,
+  Xrev: false,
+  posY: 200,
+  Yrev: false,
+  radi: 100
+}];
+// balls[0].element = document.getElementById('ball');
+// balls[0].velX = 10;
+// balls[0].velY = 8;
+// balls[0].posX = 100;
+// balls[0].Xrev = false;
+// balls[0].posY = 200;
+// balls[0].Yrev = false;
+// balls[0].radi = 100;
+
 function moveBall(wch1, nowBall) {
   var Xmin = 100;
   var Xmax = 1100;
@@ -19,10 +30,10 @@ function moveBall(wch1, nowBall) {
     nowBall.posX = nowBall.posX - nowBall.velX;
   }
   if(nowBall.posX > Xmax - nowBall.radi){
-    ball[wch1].Xrev = true;
+    balls[wch1].Xrev = true;
   }
   if(nowBall.posX <= Xmin){
-    ball[wch1].Xrev = false;
+    balls[wch1].Xrev = false;
   }
   if(nowBall.Yrev === false){
     nowBall.posY = nowBall.posY + nowBall.velY;
@@ -31,52 +42,58 @@ function moveBall(wch1, nowBall) {
     nowBall.posY = nowBall.posY - nowBall.velY;
   }
   if(nowBall.posY > Ymax - nowBall.radi){
-    ball[wch1].Yrev = true;
+    balls[wch1].Yrev = true;
   }
   if(nowBall.posY <= Ymin){
-    ball[wch1].Yrev = false;
+    balls[wch1].Yrev = false;
   }
-  ball[wch1].posX = nowBall.posX;
-  ball[wch1].posY = nowBall.posY;
-  ball[wch1].style.left = nowBall.posX + 'px';
-  ball[wch1].style.top = nowBall.posY + 'px';
+  balls[wch1].posX = nowBall.posX;
+  balls[wch1].posY = nowBall.posY;
+  balls[wch1].element.style.left = nowBall.posX + 'px';
+  balls[wch1].element.style.top = nowBall.posY + 'px';
 }
 function moveBalls(){
-    for(counter = 0; counter < ball.length; counter++){
-        moveBall(counter, ball[counter]);
+    for(counter = 0; counter < balls.length; counter++){
+        moveBall(counter, balls[counter]);
     }      
 }
 function newball(){
-    let new1 = ball.length;
-    let randrad = randrange(50, 200);
-    ball[new1] = document.createElement('div')
-    ball[new1].style.zIndex = '5';
-    ball[new1].style.position = 'absolute';
-    ball[new1].style.left = '0 px';
-    ball[new1].style.top = '200px';
-    ball[new1].style.width = randrad + 'px';
-    ball[new1].style.height = randrad + 'px';
-    ball[new1].style.borderRadius = '50%';
-    let rancolor = Math.floor(Math.random()*16777215).toString(16);
-    ball[new1].style.background = '#' + rancolor;
-    //random color from https://css-tricks.com/snippets/javascript/random-hex-color/
-    ball[new1].velX = Math.floor(Math.random() *20);
-    ball[new1].velY = Math.floor(Math.random() *20);
-    ball[new1].posX = 100;
-    ball[new1].Xrev = false;
-    ball[new1].posY = 200;
-    ball[new1].Yrev = false;
-    ball[new1].radi = randrad;
-    document.body.appendChild(ball[new1]);
-
+    let new1 = balls.length;
+    let randrad = randRange(50, 200);
+    balls.push({});
+    const newBall = balls[new1];
+    newBall.element =  document.createElement('div');
+    // newBall.element.classList.add('bouncyBall');
+    newBall.element.style.zIndex = '5';
+    newBall.element.style.position = 'absolute';
+    newBall.element.style.left = '0 px';
+    newBall.element.style.top = '200px';
+    newBall.element.style.width = randrad + 'px';
+    newBall.element.style.height = randrad + 'px';
+    newBall.element.style.borderRadius = '50%';
+    let rancolor = randRange(1, 16777215).toString(16);
+    newBall.element.style.background = '#' + rancolor;
+    // random color from https://css-tricks.com/snippets/javascript/random-hex-color/
+    newBall.velX = randRange(1,20);
+    newBall.velY = randRange(1,20);
+    newBall.posX = 100;
+    newBall.Xrev = false;
+    newBall.posY = 200;
+    newBall.Yrev = false;
+    newBall.radi = randrad;
+    document.body.appendChild(newBall.element);
 }
-function randrange(rmin, rmax){
-    let ranum = Math.random()*(rmax-rmin)+rmin;
+function randRange(rmin, rmax){
+    let ranum = Math.floor(Math.random()*(rmax-rmin)+rmin);
     return ranum;
 }
-var motioninterval
+var motionInterval
 function commence(){
-    motioninterval = setInterval(moveBalls, 50);
+    if (!motionInterval){
+      motionInterval = setInterval(moveBalls, 50);
+    } else{
+      motionInterval = 0;
+    }
 }
 
 
