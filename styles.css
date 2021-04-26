@@ -2,7 +2,7 @@
   transform: scale(1.05);
 
 }
-
+/* Bootstrap Styles */
 .card:hover {
   transform: scale(1.05);
   border:none;
@@ -11,16 +11,27 @@
 .tooltip {
   pointer-events: none;
 }
-/* Style all font awesome icons */
+
+.nav-item{
+  border-bottom: 5px solid rgb(255, 255,255,.5);
+}
+
+.nav-item.active{
+  border-bottom: 5px solid rgb(255, 255,255,1);
+}
+
+.nav-item:hover{
+  color: #DBFE87 !important;
+  border-bottom: 5px solid #DBFE87;
+}
+
+/*font awesome icons Styles*/
 
 .fab:hover {
   opacity: 0.7;
   transform: scale(1.05);
 }
 
-/* Set a specific color for each brand */
-
-/* Github */
 .fa-github-square {
   color: #30363d;
   background: white;
