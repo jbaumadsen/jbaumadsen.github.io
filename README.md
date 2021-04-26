@@ -14,4 +14,4 @@ A page where users can make balls that bounce and use buttons, switches, sliders
 A page that you should not visit.  
   
 ## License  
-This site is licensed under BSD 2(see LICENSE.txt)  
+This site is licensed under MIT(see LICENSE.txt)  
