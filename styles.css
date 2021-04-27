@@ -1,8 +1,22 @@
+.containter{
+  text-align: center;
+}
+
+.repo{
+  display: block;
+}
+
 .scaly:hover {
   transform: scale(1.05);
 
 }
+
 /* Bootstrap Styles */
+
+.btn{
+  text-align: center;
+}
+
 .card:hover {
   transform: scale(1.05);
   border:none;
