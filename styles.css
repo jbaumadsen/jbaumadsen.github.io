@@ -1,61 +1,66 @@
 .containter{
-  text-align: center;
+    text-align: center;
 }
 
 .repo{
-  display: block;
+    display: block;
 }
 
 .scaly:hover {
-  transform: scale(1.05);
+    transform: scale(1.05);
 
 }
 
 /* Bootstrap Styles */
 
 .btn{
-  text-align: center;
+    text-align: center;
 }
 
 .card:hover {
-  transform: scale(1.05);
-  border:none;
+    transform: scale(1.05);
+    border:none;
 }
 
 .tooltip {
-  pointer-events: none;
+    pointer-events: none;
 }
 
 .nav-item{
-  border-bottom: 5px solid rgb(255, 255,255,.5);
+    border-bottom: 5px solid rgb(255, 255,255,.5);
 }
 
 .nav-item.active{
-  border-bottom: 5px solid rgb(255, 255,255,1);
+    border-bottom: 5px solid rgb(255, 255,255,1);
 }
 
 .nav-item:hover{
-  color: #DBFE87 !important;
-  border-bottom: 5px solid #DBFE87;
+    color: #DBFE87 !important;
+    border-bottom: 5px solid #DBFE87;
 }
 
 /*font awesome icons Styles*/
 
 .fab:hover {
-  opacity: 0.7;
-  transform: scale(1.05);
+    opacity: 0.7;
+    transform: scale(1.05);
 }
 
 .fa-github-square {
-  color: #30363d;
-  background: white;
+    color: #30363d;
+    background: white;
 
 }
 
 .fa-linkedin {
-  color:#0e76a8;
+    color:#0e76a8;
 }
 
 .fa-envelope-square{
-  color: #bb001b;
+    color: #bb001b;
+}
+
+.project-h3{
+    color: #47E5BC;
+    font-size: 2em;
 }
