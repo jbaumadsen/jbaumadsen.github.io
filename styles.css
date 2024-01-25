@@ -64,3 +64,9 @@
     color: #47E5BC;
     font-size: 2em;
 }
+
+.profile-pic_container {
+    img {
+        max-width: 15rem;
+    } 
+}
